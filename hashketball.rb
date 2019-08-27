@@ -89,6 +89,21 @@ def game_hash
         }
 end
 
+def player_statistic(stat)
+  player_name = nil 
+  measure_of_stat = "calculating..."
+  
+  game_hash.each_value do |team_data|
+    team_data.each_value {|players|
+      binding.pry
+      exit!
+    }
+  end
+  
+end
+stat = :points
+player_statistic(stat)
+
 def num_points_scored(player)
   points = "calculating..."
   game_hash.each_value do |team_data|
@@ -213,6 +228,7 @@ def most_points_scored
 end
 
 def winning_team
+  p "+++++++++++++start winning_team +++++++++++++"
   home_team_points = 0
   away_team_points = 0
   game_hash[:home][:players].each do |player|
